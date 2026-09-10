@@ -5,8 +5,7 @@ This repository is the public companion repository to the SP-RP server project.
 ## Canonical layers (GitHub view)
 
 - `client/`
-  - `sprp-blips`, `valkyrie-crashfix`, `valkyrie-repair` source snapshots for
-    ASI tools
+  - `map-suite`, `crashfix`, `repair-tool` source snapshots for ASI tools
 - `deploy/`
   - decompilation pipelines, binary analysis tools, and reverse-engineering
     utilities
@@ -25,14 +24,14 @@ This repo intentionally stays separate from private runtime deployment secrets,
 live server databases, and private build history. Those parts remain in the
 private SP-RP server repository.
 
-## Why names stay
+## Why names changed
 
-Public documentation and tooling reference these names directly. Keeping
-`sprp-blips`, `valkyrie-crashfix`, and `valkyrie-repair` unchanged keeps
-release notes, tests, and historical archives aligned.
+Public documentation and tooling now reference canonical directory names to match
+the GitHub structure: `map-suite`, `crashfix`, `repair-tool`. Old aliases are
+not kept, and no compatibility redirections are relied on in this repository.
 
-## Non-breaking organization plan
+## Organization plan
 
-- Keep canonical path names above for day-to-day work.
+- Use canonical path names above for day-to-day work.
 - Use local workspace grouping outside this repo only if you want cleaner local
   navigation.

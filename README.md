@@ -23,9 +23,9 @@ Original SP-RP code is offered under [BSD-3-Clause](LICENSE), which permits use 
 
 | Project | Source |
 | --- | --- |
-| Valkyrie Map and Doctor Valkyrie | [client/sprp-blips](client/sprp-blips) |
-| Valkyrie Crashfix 2.3.0-test | [client/valkyrie-crashfix](client/valkyrie-crashfix) |
-| Valkyrie Repair 1.2 | [client/valkyrie-repair](client/valkyrie-repair) |
+| Valkyrie Map and Doctor Valkyrie | [client/map-suite](client/map-suite) |
+| Valkyrie Crashfix 2.3.0-test | [client/crashfix](client/crashfix) |
+| Valkyrie Repair 1.2 | [client/repair-tool](client/repair-tool) |
 | Binary-analysis and pedestrian-path research tools | [deploy](deploy) |
 
 The mod folders contain development source snapshots; versions and build instructions are in the mod guide. The separate [decompilation archive](docs/reverse-engineering/README.md) contains the actual generated research output, with exact binary hashes, recovery counts and file checksums.

@@ -4,7 +4,7 @@ DK22Pac/plugin-sdk is included unchanged at `third_party/plugin-sdk`, pinned to 
 
 SP-RP is maintained by darkcenturies / valkyrie. The original SP-RP BSD-3-Clause notice credits Dignity and is preserved in LICENSE. Original project contributions follow those terms unless their files or directories specify otherwise.
 
-Valkyrie Crashfix is GPL-3.0, with its license at client/valkyrie-crashfix/LICENSE and original notices retained in source/third-party. Credits include konradzimorski, Whitetiger, MTA:SA, Deji, 0x688, Ryosuke839 and bartekdvd. The root BSD notice does not override these terms.
+Valkyrie Crashfix is GPL-3.0, with its license at client/crashfix/LICENSE and original notices retained in source/third-party. Credits include konradzimorski, Whitetiger, MTA:SA, Deji, 0x688, Ryosuke839 and bartekdvd. The root BSD notice does not override these terms.
 
 Doctor/Repair diagnostic resources retain their existing source attribution and LICENSE-THIRD-PARTY.txt. Repair's embedded ASI files are the previously shipped payloads, not game or vendor binaries. The source inventory identifies the Winmode Nullfix source gap.
 

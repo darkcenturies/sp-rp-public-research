@@ -18,9 +18,9 @@ __pycache__/
 *.key
 *.idb
 *.i64
-client/sprp-blips/src/version.h
-client/sprp-blips/*.asi
-client/valkyrie-crashfix/*.asi
+client/map-suite/src/version.h
+client/map-suite/*.asi
+client/crashfix/*.asi
 
 Valkyrie Crashfix.log
 actor-metadata-fixture.bin

@@ -30,10 +30,10 @@ Without `-Release`, Map and Doctor retain development diagnostics. Their release
 
 | Target | Underlying recipe | Output |
 | --- | --- | --- |
-| map | `client/sprp-blips/build.ps1 -OnlyTarget valkyrie-map` | `client/sprp-blips/build/valkyrie-map.asi` |
-| doctor | `client/sprp-blips/build.ps1 -OnlyTarget doctor-valkyrie` | `client/sprp-blips/build/doctor-valkyrie.asi` |
-| crashfix | `client/valkyrie-crashfix/source/build.ps1` | `client/valkyrie-crashfix/Valkyrie Crashfix.asi` |
-| repair | `client/valkyrie-repair/source/build.ps1` | `client/valkyrie-repair/valkyrie-repair.exe` |
+| map | `client/map-suite/build.ps1 -OnlyTarget valkyrie-map` | `client/map-suite/build/valkyrie-map.asi` |
+| doctor | `client/map-suite/build.ps1 -OnlyTarget doctor-valkyrie` | `client/map-suite/build/doctor-valkyrie.asi` |
+| crashfix | `client/crashfix/source/build.ps1` | `client/crashfix/Valkyrie Crashfix.asi` |
+| repair | `client/repair-tool/source/build.ps1` | `client/repair-tool/valkyrie-repair.exe` |
 
 Intermediate files from the root wrapper go under `work/build-run/` or the component's ignored build directory. Public builds do not require the private gamemode or game executables. Running an ASI in a game is a separate step requiring the correct game version and loader.
 
@@ -46,8 +46,8 @@ For a new public ASI, document its source ownership, supported binary hashes, de
 ## Checks and common problems
 
 - `python tools/check_public.py` verifies public scope, Python syntax and archive integrity.
-- `client/valkyrie-crashfix/source/tests/build-tests.ps1` compiles/runs Crashfix's native tests; use an ignored working directory for its intermediate files.
-- `client/valkyrie-crashfix/source/tests/requirements.txt` lists separate Python machine-code test dependencies. They are not prerequisites for ordinary ASI compilation.
+- `client/crashfix/source/tests/build-tests.ps1` compiles/runs Crashfix's native tests; use an ignored working directory for its intermediate files.
+- `client/crashfix/source/tests/requirements.txt` lists separate Python machine-code test dependencies. They are not prerequisites for ordinary ASI compilation.
 - Missing `vswhere` or `vcvarsall`: install/modify the C++ workload.
 - Missing `windows.h`, system libraries or `rc.exe`: check the Windows SDK in Visual Studio Installer.
 - Wrong architecture: use the recipes' x86 environment; GTA SA's process is 32-bit even on 64-bit Windows.

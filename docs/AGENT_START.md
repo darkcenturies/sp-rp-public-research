@@ -23,18 +23,20 @@ GTA SA is the base game. SA-MP is its multiplayer platform. S&SMP is a separate 
 | Task | Start here | What it contains |
 | --- | --- | --- |
 | Build an ASI | root `build.ps1`, [BUILDING.md](BUILDING.md) | Public build entry point and compiler setup |
-| Map controls | `client/sprp-blips/src/main_map.cpp`, `mapzoom.cpp`, `game.cpp` | Network-free pause-map hooks and controls; earlier 0.2.0 baseline |
-| Doctor diagnosis | `client/sprp-blips/src/main_doctor.cpp`, `doctor.cpp`, `doctorlist.cpp` | Doctor 0.3.2 entry point, evidence classification and rules |
+| Map controls | `client/map-suite/src/main_map.cpp`, `mapzoom.cpp`, `game.cpp` | Network-free pause-map hooks and controls; earlier 0.2.0 baseline |
+| Doctor diagnosis | `client/map-suite/src/main_doctor.cpp`, `doctor.cpp`, `doctorlist.cpp` | Doctor 0.3.2 entry point, evidence classification and rules |
 | Doctor UI/resources | `crashwindow.cpp`, `reportpaths.cpp`, `doctor-valkyrie.rc` in the same source folder | Diagnostic window, reports and embedded resources |
-| Crash guards | `client/valkyrie-crashfix/source/ValkyrieCrashfix.cpp`, `SafePatch.inc`, `tests/` | Crashfix 2.3.0-test and native/machine-code tests; GPL-3.0 |
-| Repair application | `client/valkyrie-repair/source/Engine.cs`, `MainForm.cs`, `SelfTests.cs` | Repair 1.2 scanning, user-approved repairs, undo and isolated tests |
+| Crash guards | `client/crashfix/source/ValkyrieCrashfix.cpp`, `SafePatch.inc`, `tests/` | Crashfix 2.3.0-test and native/machine-code tests; GPL-3.0 |
+| Repair application | `client/repair-tool/source/Engine.cs`, `MainForm.cs`, `SelfTests.cs` | Repair 1.2 scanning, user-approved repairs, undo and isolated tests |
 | Protocol facts | [S&SMP protocol](../research/ssmp-protocol.md), [pseudocode](reverse-engineering/ssmp-server-1.3.1-patch1.pseudo.cpp) | Recorded E7/D8/E9 and join layouts; not a complete server implementation |
 | Game/client internals | [archive inventory](reverse-engineering/README.md) | Four complete generated target exports and coverage |
 | Population research | [ped population](reverse-engineering/PECORE-PED-POPULATION.md) | Recorded observations, methods and unresolved meanings |
 | Research reproduction | [REPRODUCING.md](reverse-engineering/REPRODUCING.md), `deploy/ghidra_scripts/ExportDecompiled.py` | Explicit local inputs, hashes and Ghidra export recipe |
 | Outside references | [upstream catalog](../research/upstreams.md) | Recorded upstream revisions and their separate terms |
 
-Source filenames above that omit a directory are relative to the directory named in that row. For output paths and product versions use [MODS.md](MODS.md) and BUILDING.md, not assumptions based on the folder name `sprp-blips`.
+Source filenames above that omit a directory are relative to the directory named in
+that row. For output paths and product versions use [MODS.md](MODS.md) and
+BUILDING.md, not assumptions based on the folder name `map-suite`.
 
 ## Reading the archive efficiently
 

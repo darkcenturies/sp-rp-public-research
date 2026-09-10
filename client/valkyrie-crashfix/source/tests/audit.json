@@ -1,0 +1,666 @@
+[
+  {
+    "name": "CrashFix_Misc1",
+    "address": 6134394,
+    "size": 8,
+    "returns": {
+      "RETURN_CrashFix_Misc1": 6134388
+    },
+    "original": "a1cc128d008b3430",
+    "id": 1,
+    "title": "Missing vehicle specular material data",
+    "checks": "cmp esi, 10000h\njb invalid\npush eax\nmov eax, dword ptr ds:[8D12CCh]\ntest eax, eax\njs bad_scratch\nadd eax, esi\njc bad_scratch\nmov eax, [eax]\ncmp eax, 10000h\njb bad_scratch\npop eax\njmp valid\nbad_scratch:\npop eax\njmp invalid",
+    "fail": "push 05D9B09h\nret",
+    "targets": [
+      6134537
+    ],
+    "notes": "0x8D12CC contains a signed plugin OFFSET, not a pointer. Accepts normal small offsets; checks the material, unregistered offset, address overflow and resulting specular-data pointer. Preserves the SkyGFX decision.",
+    "following": 5,
+    "expected": "a1cc128d008b343068b02cc000",
+    "mask": "xxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 6134537,
+        "bytes": "6a006a1de8be27220083c408c7442420"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc2",
+    "address": 7018672,
+    "size": 9,
+    "returns": {
+      "RETURN_CrashFix_Misc2": 7018681,
+      "RETURN_CrashFix_Misc2B": 7026549
+    },
+    "original": "8b402c8a8e29040000",
+    "id": 2,
+    "title": "Missing vehicle collision data",
+    "checks": "cmp eax, 10000h\njb invalid\npush eax\nmov eax, [eax+2Ch]\ncmp eax, 10000h\njb bad_scratch\ncmp dword ptr [eax+10h], 10000h\njb bad_scratch\npop eax\njmp valid\nbad_scratch:\npop eax\njmp invalid",
+    "fail": "push 06B3775h\nret",
+    "targets": [
+      7026549
+    ],
+    "notes": "No EBX clobber from suspension-line probe.",
+    "following": 16,
+    "expected": "8b402c8a8e290400008a962c0400008944244c8a8668080000",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 7026549,
+        "bytes": "5f5e5d5b81c4d8000000c383ec245355"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc3",
+    "address": 6578137,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc3": 6578143
+    },
+    "original": "8b9184030000",
+    "id": 3,
+    "title": "Missing car-door vehicle or handling",
+    "checks": "cmp ecx, 10000h\njb invalid\ncmp dword ptr [ecx+384h], 10000h\njb invalid",
+    "fail": "mov ecx, [esp+4]\nmov dword ptr [ecx], 0\nret 8",
+    "targets": [],
+    "notes": "Sets output group to default and uses callee cleanup RET 8, not a CDECL abort.",
+    "following": 16,
+    "expected": "8b91840300000fb68ade00000069c9940000005081c1",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": []
+  },
+  {
+    "name": "CrashFix_Misc4",
+    "address": 5178066,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc4": 5178071,
+      "RETURN_CrashFix_Misc4B": 5180167
+    },
+    "original": "99f7f903d5",
+    "id": 4,
+    "title": "Sound service division faults",
+    "checks": "test ecx, ecx\njz invalid\ncmp ecx, -1\njne valid\ncmp eax, 80000000h\nje invalid",
+    "fail": "push 04F0B07h\nret",
+    "targets": [
+      5180167
+    ],
+    "notes": "Handles zero divisor and signed INT_MIN/-1 overflow.",
+    "following": 16,
+    "expected": "99f7f903d56689178b4424148b4c241883c00283c7",
+    "mask": "xxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 5180167,
+        "bytes": "5f5e5d5b83c428c3908b4424148b5424"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc5",
+    "address": 6158665,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc5": 6158672,
+      "RETURN_CrashFix_Misc5B": 6159556
+    },
+    "original": "8b3c8dc8b0a900",
+    "id": 5,
+    "title": "Relocated vehicle model table",
+    "checks": "push edi\nmov edi, g_modelTable\nmov edi, [edi+ecx*4]\ncmp edi, 10000h\njb bad_scratch\ncmp dword ptr [edi+5Ch], 10000h\njb bad_scratch\npop edi\njmp valid\nbad_scratch:\npop edi\njmp invalid",
+    "fail": "pop edi\npush 05DFCC4h\nret",
+    "targets": [
+      6159556
+    ],
+    "notes": "Captures the live table operand, not 0xA9B0C8. Missing model/vehicle structure uses existing SEH epilogue.",
+    "following": 16,
+    "expected": "8b3c8dc8b0a900508d4c2470e896c3fbffc78424c80000",
+    "mask": "xxx????xxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 6159556,
+        "bytes": "8b8c24bc0000005e64890d0000000081"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc6",
+    "address": 5052240,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc6": 5052245,
+      "RETURN_CrashFix_Misc6B": 5052996
+    },
+    "original": "8b411085c0",
+    "id": 6,
+    "title": "Null animation association",
+    "checks": "cmp ecx, 10000h\njb invalid",
+    "fail": "push 04D1A44h\nret",
+    "targets": [
+      5052996
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8b411085c074628a4004d0e8a80174598b511433c0",
+    "mask": "xxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 5052996,
+        "bytes": "5f5e5d83c468c3909090909083ec6453"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc7",
+    "address": 4291576,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc7": 4291581,
+      "RETURN_CrashFix_Misc7B": 4291583
+    },
+    "original": "8b712c85f6",
+    "id": 7,
+    "title": "Null collision model",
+    "checks": "cmp ecx, 10000h\njb invalid",
+    "fail": "push 0417BFFh\nret",
+    "targets": [
+      4291583
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8b712c85f6750732c05e83c42cc3f605285a960001",
+    "mask": "xxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 4291583,
+        "bytes": "32c05e83c42cc3f605285a9600017507"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc8",
+    "address": 7555165,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc8": 7555170,
+      "RETURN_CrashFix_Misc8B": 7555185
+    },
+    "original": "8b0c0a85c9",
+    "id": 8,
+    "title": "Null 2D-effect object",
+    "checks": "cmp ecx, 10000h\njb invalid",
+    "fail": "push 0734871h\nret",
+    "targets": [
+      7555185
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8b0c0a85c9740d83390076088b4c2408890133c0c3",
+    "mask": "xxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 7555185,
+        "bytes": "c3909090909090909090909090909051"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc9",
+    "address": 7572324,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc9": 7572330,
+      "RETURN_CrashFix_Misc9B": 7575610
+    },
+    "original": "8b4640f6c401",
+    "id": 9,
+    "title": "Null projectile",
+    "checks": "cmp esi, 10000h\njb invalid",
+    "fail": "mov eax, [esp+7Ch]\nxor edi, edi\npush 073983Ah\nret",
+    "targets": [
+      7575610
+    ],
+    "notes": "Reloads the projectile loop index before advancing; avoids stale EAX.",
+    "following": 16,
+    "expected": "8b4640f6c401740f8b4b203bcf7408e87818d7ff897b",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 7575610,
+        "bytes": "4083f8208944247c0f8cf8f2ffff5f5e"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc10",
+    "address": 5453054,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc10": 5453060,
+      "RETURN_CrashFix_Misc10B": 5453113
+    },
+    "original": "8b1189542400",
+    "id": 10,
+    "title": "Null transform vector",
+    "checks": "cmp ecx, 10000h\njb invalid",
+    "fail": "mov eax, [esp+1Ch]\nmov dword ptr [eax], 0\nmov dword ptr [eax+4], 0\nmov dword ptr [eax+8], 0\npush 0533539h\nret",
+    "targets": [
+      5453113
+    ],
+    "notes": "Returns initialized zero vector through the original output pointer.",
+    "following": 16,
+    "expected": "8b11895424008b51048b4908895424048d5424005250",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 5453113,
+        "bytes": "83c418c208008b5424208b44241c5283"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc11",
+    "address": 5057634,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc11": 5057639,
+      "RETURN_CrashFix_Misc11B": 5058051
+    },
+    "original": "8b411085c0",
+    "id": 11,
+    "title": "Null animation association (second path)",
+    "checks": "cmp ecx, 10000h\njb invalid",
+    "fail": "push 04D2E03h\nret",
+    "targets": [
+      5058051
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8b411085c00f84ef000000d9052486850051d86424",
+    "mask": "xxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 5058051,
+        "bytes": "5f5e5d83c43cc39090909090908b4424"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc12",
+    "address": 5063109,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc12": 5063114,
+      "RETURN_CrashFix_Misc12B": 5063202
+    },
+    "original": "8a470b84c0",
+    "id": 12,
+    "title": "Null animation block",
+    "checks": "cmp edi, 10000h\njb invalid",
+    "fail": "push 04D4222h\nret",
+    "targets": [
+      5063202
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8a470b84c07418d94710d81d508b8500dfe0f6c444",
+    "mask": "xxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 5063202,
+        "bytes": "5fc38d44240850b920ebb500e88dfeff"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc14",
+    "address": 5100725,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc14": 5100731
+    },
+    "original": "81ecd4000000",
+    "id": 14,
+    "title": "Uninitialized audio event volumes",
+    "checks": "cmp dword ptr ds:[0BD00F8h], 10000h\njb invalid",
+    "fail": "mov eax, [esp]\nmov fs:[0], eax\nadd esp, 0Ch\nret 0Ch",
+    "targets": [],
+    "notes": "Restores the SEH chain established before this hook; old early return left FS:[0] dangling.",
+    "following": 16,
+    "expected": "81ecd400000053555633db578bf1c744242c00000000",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": []
+  },
+  {
+    "name": "CrashFix_Misc16",
+    "address": 6182928,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc16": 6182939
+    },
+    "original": "e8cbbdeeff",
+    "id": 16,
+    "title": "Missing first animation association",
+    "checks": "cmp eax, 10000h\njb invalid",
+    "fail": "add esp, 4\npush 05E5EBAh\nret",
+    "targets": [
+      6184634,
+      6182917
+    ],
+    "notes": "Calls the original association getter once, then checks its result BEFORE the existing Fastman92 extension stub. Real epilogue restores EDI/ESI and FS:[0].",
+    "following": 0,
+    "expected": "e8cbbdeeff",
+    "mask": "xxxxx",
+    "exitChecks": [
+      {
+        "address": 6184634,
+        "bytes": "8b4c24505f5e64890d0000000083c454"
+      },
+      {
+        "address": 6182917,
+        "bytes": "83ec48568bf18b46185750e8cbbdeeff"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc17",
+    "address": 8327694,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc17_US": 8327700,
+      "RETURN_CrashFix_Misc17B_US": 8327734
+    },
+    "original": "8b8090000000",
+    "id": 17,
+    "title": "Null RenderWare frame plugin owner",
+    "checks": "cmp eax, 10000h\njb invalid",
+    "fail": "push 07F1236h\nret",
+    "targets": [
+      8327734
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8b80900000003bc7741e8b5c241c8b6c24188b3083c0",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 8327734,
+        "bytes": "8b4424145f5e5d5bc3908b44240483c0"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc18",
+    "address": 5012909,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc18": 5012916
+    },
+    "original": "8b55408b442410",
+    "id": 18,
+    "title": "Missing wheel frame",
+    "checks": "cmp ebp, 10000h\njb invalid",
+    "fail": "mov eax, [esp+10h]\nmov dword ptr [eax], 0\nmov dword ptr [eax+4], 0\nmov dword ptr [eax+8], 0\npop esi\npop ebp\nret 0Ch",
+    "targets": [],
+    "notes": "",
+    "following": 16,
+    "expected": "8b55408b44241089108b4d448948048b55485e8950085d",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": []
+  },
+  {
+    "name": "CrashFix_Misc20",
+    "address": 5567408,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc20": 5567414
+    },
+    "original": "83ec108b4114",
+    "id": 20,
+    "title": "Null placeable or matrix",
+    "checks": "cmp ecx, 10000h\njb invalid\ncmp dword ptr [ecx+14h], 10000h\njb invalid",
+    "fail": "ret",
+    "targets": [],
+    "notes": "Checks the matrix member as well as the object.",
+    "following": 16,
+    "expected": "83ec108b4114d940348b5030d95c2404d94038895424",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": []
+  },
+  {
+    "name": "CrashFix_Misc21",
+    "address": 6590176,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc21": 6590183
+    },
+    "original": "8b4424088b4810",
+    "id": 21,
+    "title": "Null fall-out callback task",
+    "checks": "cmp dword ptr [esp+0Ch], 10000h\njb invalid",
+    "fail": "ret",
+    "targets": [],
+    "notes": "Checks actual task argument; no unpopulated association-lifetime registry.",
+    "following": 16,
+    "expected": "8b4424088b481085c9c6400801c7400c0000000074428b",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": []
+  },
+  {
+    "name": "CrashFix_Misc22",
+    "address": 5041928,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc22": 5041957
+    },
+    "original": "8b14828b5e10",
+    "id": 22,
+    "title": "Missing animation node source",
+    "checks": "cmp edx, 10000h\njb invalid",
+    "fail": "mov ebx, [esi+10h]\nmov dword ptr [ebx+ecx+10h], 0\nmov dword ptr [ebx+ecx+14h], 0\npush 04CEF19h\nret",
+    "targets": [
+      5041945
+    ],
+    "notes": "Zeros only this node and returns to the real loop; no duplicated loop or changed valid behavior.",
+    "following": 16,
+    "expected": "8b14828b5e1089540b108b561089740a140fbf560c40",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 5041945,
+        "bytes": "0fbf560c4083c1183bc27ce05b5f5ec2"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc23",
+    "address": 7224592,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc23": 7224599
+    },
+    "original": "8b5424088d0452",
+    "id": 23,
+    "title": "Door offset index bounds",
+    "checks": "cmp dword ptr [esp+0Ch], 7\njae invalid",
+    "fail": "mov dword ptr [esp+8], 0\njmp dword ptr [g_resume+23*4]",
+    "targets": [],
+    "notes": "The array has 7 vectors, not 16. Unsigned comparison rejects negative indices too.",
+    "following": 16,
+    "expected": "8b5424088d0452d944814857d94481448d7c8140d907d9",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": []
+  },
+  {
+    "name": "CrashFix_Misc24",
+    "address": 8326600,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc24_US": 8326606
+    },
+    "original": "8b8598000000",
+    "id": 24,
+    "title": "Null RenderWare child frame",
+    "checks": "cmp ebp, 10000h\njb invalid",
+    "fail": "xor ebp, ebp\nxor eax, eax\npush 07F0DCEh\nret",
+    "targets": [
+      8326606
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8b859800000085c0741f8b7c241c8b5c24188bb09c00",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 8326606,
+        "bytes": "85c0741f8b7c241c8b5c24188bb09c00"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc25",
+    "address": 6578214,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc25": 6578219
+    },
+    "original": "8d44241050",
+    "id": 25,
+    "title": "Car-door callback without vehicle",
+    "checks": "cmp esi, 10000h\njb invalid\ncmp dword ptr [esi+10h], 10000h\njb invalid",
+    "fail": "pop esi\npop ecx\nret",
+    "targets": [],
+    "notes": "Preserves EAX on valid path; original LEA/PUSH replayed exactly.",
+    "following": 16,
+    "expected": "8d442410508d4c2408518bcec7460c00000000c646",
+    "mask": "xxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": []
+  },
+  {
+    "name": "CrashFix_Misc26",
+    "address": 7577504,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc26": 7577510
+    },
+    "original": "8b3cab4d85ff",
+    "id": 26,
+    "title": "Invalid shot pedestrian list",
+    "checks": "cmp ebx, 10000h\njb invalid",
+    "fail": "xor edi, edi\ndec ebp\ntest edi, edi\npush 0739FA6h\nret",
+    "targets": [
+      7577510
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8b3cab4d85ff0f84250100008bcfe86da2eaff84c00f",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 7577510,
+        "bytes": "0f84250100008bcfe86da2eaff84c00f"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc27",
+    "address": 6518788,
+    "size": 8,
+    "returns": {
+      "RETURN_CrashFix_Misc27": 6518786
+    },
+    "original": "8b8f8c0500008b01",
+    "id": 27,
+    "title": "Dying-in-car task without vehicle",
+    "checks": "cmp dword ptr [edi+58Ch], 10000h\njb invalid",
+    "fail": "push 063782Ah\nret",
+    "targets": [
+      6518826
+    ],
+    "notes": "Hooks the actual vehicle dereference after the original ped-state branch; preserves valid flags and ECX.",
+    "following": 16,
+    "expected": "8b8f8c0500008b016a00ff90e400000084c075125768d600",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 6518826,
+        "bytes": "5768c10200008bcee81985ffff5f5ec2"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc28",
+    "address": 4498685,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc28": 4498691,
+      "RETURN_CrashFix_Misc28B": 4499024
+    },
+    "original": "8b8670010000",
+    "id": 28,
+    "title": "Garage door without dummy",
+    "checks": "cmp esi, 10000h\njb invalid\ncmp dword ptr [esi+170h], 10000h\njb invalid",
+    "fail": "push 044A650h\nret",
+    "targets": [
+      4499024
+    ],
+    "notes": "",
+    "following": 16,
+    "expected": "8b86700100008b481485c974058d4130eb0383c0048b",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 4499024,
+        "bytes": "5e83c410c39090909090909090909090"
+      }
+    ]
+  },
+  {
+    "name": "CrashFix_Misc29",
+    "address": 5112364,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc29": 5112369,
+      "RETURN_CrashFix_Misc29B": 5112359
+    },
+    "original": "0fbf442408",
+    "id": 29,
+    "title": "Sound-bank slot bounds",
+    "checks": "push eax\nmovsx eax, word ptr [esp+10h]\ntest eax, eax\njl bad_scratch\ncmp ax, word ptr [ecx+0Ch]\njae bad_scratch\ncmp dword ptr [ecx], 10000h\njb bad_scratch\npop eax\njmp valid\nbad_scratch:\npop eax\njmp invalid",
+    "fail": "push 04E0227h\nret",
+    "targets": [
+      5112359
+    ],
+    "notes": "Checks the signed slot against the live loader slot count at +0x0C and checks the slot array. Does not misclassify every low byte FF as -1.",
+    "following": 16,
+    "expected": "0fbf4424088b0969c0d41200000fbf5408100fb744",
+    "mask": "xxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": [
+      {
+        "address": 5112359,
+        "bytes": "32c0c208000fbf4424088b0969c0d412"
+      }
+    ]
+  },
+  {
+    "name": "CClumpModelInfo_GetFrameFromId",
+    "address": 5002176,
+    "size": 7,
+    "returns": {
+      "RETURN_CClumpModelInfo_GetFrameFromId": 5002183
+    },
+    "original": "83ec088b442410",
+    "id": 30,
+    "title": "Null clump frame lookup",
+    "checks": "cmp dword ptr [esp+8], 10000h\njb invalid",
+    "fail": "xor eax, eax\nret",
+    "targets": [],
+    "notes": "Retains normal null-result semantics; removes recursive nearest-frame guessing.",
+    "following": 16,
+    "expected": "83ec088b4424108b54240c8d4c240051894424048b4204",
+    "mask": "xxxxxxxxxxxxxxxxxxxxxxx",
+    "exitChecks": []
+  }
+]

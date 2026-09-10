@@ -1,0 +1,5 @@
+Valkyrie Repair embeds diagnostic rule text derived from Doctor Valkyrie and the local
+CrashList.txt resource used by that project. Keep those resource files with source
+distributions so attribution and provenance are visible to reviewers.
+
+The repair application itself was created for this workspace on 2026-09-10.

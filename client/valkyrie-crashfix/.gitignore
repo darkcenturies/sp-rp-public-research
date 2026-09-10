@@ -1,0 +1,9 @@
+*.asi
+*.map
+*.obj
+*.lib
+*.exp
+*.exe
+*.log
+__pycache__/
+actor-metadata-fixture.bin

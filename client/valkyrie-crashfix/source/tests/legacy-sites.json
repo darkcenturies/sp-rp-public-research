@@ -1,0 +1,277 @@
+[
+  {
+    "name": "CrashFix_Misc1",
+    "address": 6134382,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc1": 6134388
+    },
+    "original": "8b44241885c0"
+  },
+  {
+    "name": "CrashFix_Misc2",
+    "address": 7018672,
+    "size": 9,
+    "returns": {
+      "RETURN_CrashFix_Misc2": 7018681,
+      "RETURN_CrashFix_Misc2B": 7026549
+    },
+    "original": "8b402c8a8e29040000"
+  },
+  {
+    "name": "CrashFix_Misc3",
+    "address": 6578137,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc3": 6578143
+    },
+    "original": "8b9184030000"
+  },
+  {
+    "name": "CrashFix_Misc4",
+    "address": 5178066,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc4": 5178071,
+      "RETURN_CrashFix_Misc4B": 5180167
+    },
+    "original": "99f7f903d5"
+  },
+  {
+    "name": "CrashFix_Misc5",
+    "address": 6158665,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc5": 6158672,
+      "RETURN_CrashFix_Misc5B": 6159556
+    },
+    "original": "8b3c8dc8b0a900"
+  },
+  {
+    "name": "CrashFix_Misc6",
+    "address": 5052240,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc6": 5052245,
+      "RETURN_CrashFix_Misc6B": 5052996
+    },
+    "original": "8b411085c0"
+  },
+  {
+    "name": "CrashFix_Misc7",
+    "address": 4291576,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc7": 4291581,
+      "RETURN_CrashFix_Misc7B": 4291583
+    },
+    "original": "8b712c85f6"
+  },
+  {
+    "name": "CrashFix_Misc8",
+    "address": 7555165,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc8": 7555170,
+      "RETURN_CrashFix_Misc8B": 7555185
+    },
+    "original": "8b0c0a85c9"
+  },
+  {
+    "name": "CrashFix_Misc9",
+    "address": 7572324,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc9": 7572330,
+      "RETURN_CrashFix_Misc9B": 7575610
+    },
+    "original": "8b4640f6c401"
+  },
+  {
+    "name": "CrashFix_Misc10",
+    "address": 5453054,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc10": 5453060,
+      "RETURN_CrashFix_Misc10B": 5453113
+    },
+    "original": "8b1189542400"
+  },
+  {
+    "name": "CrashFix_Misc11",
+    "address": 5057634,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc11": 5057639,
+      "RETURN_CrashFix_Misc11B": 5058051
+    },
+    "original": "8b411085c0"
+  },
+  {
+    "name": "CrashFix_Misc12",
+    "address": 5063109,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc12": 5063114,
+      "RETURN_CrashFix_Misc12B": 5063202
+    },
+    "original": "8a470b84c0"
+  },
+  {
+    "name": "CrashFix_Misc13",
+    "address": 5064270,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc13": 5064276,
+      "RETURN_CrashFix_Misc13B": 5064548
+    },
+    "original": "8a400ac0e805"
+  },
+  {
+    "name": "CrashFix_Misc14",
+    "address": 5100725,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc14": 5100731
+    },
+    "original": "81ecd4000000"
+  },
+  {
+    "name": "FreezeFix_Misc15",
+    "address": 22465966,
+    "size": 6,
+    "returns": {
+      "RETURN_FreezeFix_Misc15_US": 22465972
+    },
+    "original": "ff1588808500"
+  },
+  {
+    "name": "CrashFix_Misc16",
+    "address": 6182933,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc16": 6182939
+    },
+    "original": "0fbf482c33ff"
+  },
+  {
+    "name": "CrashFix_Misc17",
+    "address": 8327694,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc17_US": 8327700,
+      "RETURN_CrashFix_Misc17B_US": 8327734
+    },
+    "original": "8b8090000000"
+  },
+  {
+    "name": "CrashFix_Misc18",
+    "address": 5012909,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc18": 5012916
+    },
+    "original": "8b55408b442410"
+  },
+  {
+    "name": "CrashFix_Misc20",
+    "address": 5567408,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc20": 5567414
+    },
+    "original": "83ec108b4114"
+  },
+  {
+    "name": "CrashFix_Misc21",
+    "address": 6590176,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc21": 6590183
+    },
+    "original": "8b4424088b4810"
+  },
+  {
+    "name": "CrashFix_Misc22",
+    "address": 5041928,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc22": 5041957
+    },
+    "original": "8b14828b5e10"
+  },
+  {
+    "name": "CrashFix_Misc23",
+    "address": 7224592,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc23": 7224599
+    },
+    "original": "8b5424088d0452"
+  },
+  {
+    "name": "CrashFix_Misc24",
+    "address": 8326600,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc24_US": 8326606
+    },
+    "original": "8b8598000000"
+  },
+  {
+    "name": "CrashFix_Misc25",
+    "address": 6578214,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc25": 6578219
+    },
+    "original": "8d44241050"
+  },
+  {
+    "name": "CrashFix_Misc26",
+    "address": 7577504,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc26": 7577510
+    },
+    "original": "8b3cab4d85ff"
+  },
+  {
+    "name": "CrashFix_Misc27",
+    "address": 6518779,
+    "size": 7,
+    "returns": {
+      "RETURN_CrashFix_Misc27": 6518786
+    },
+    "original": "80bf8404000002"
+  },
+  {
+    "name": "CrashFix_Misc28",
+    "address": 4498685,
+    "size": 6,
+    "returns": {
+      "RETURN_CrashFix_Misc28": 4498691,
+      "RETURN_CrashFix_Misc28B": 4499024
+    },
+    "original": "8b8670010000"
+  },
+  {
+    "name": "CrashFix_Misc29",
+    "address": 5112364,
+    "size": 5,
+    "returns": {
+      "RETURN_CrashFix_Misc29": 5112369,
+      "RETURN_CrashFix_Misc29B": 5112359
+    },
+    "original": "0fbf442408"
+  },
+  {
+    "name": "CClumpModelInfo_GetFrameFromId",
+    "address": 5002176,
+    "size": 7,
+    "returns": {
+      "RETURN_CClumpModelInfo_GetFrameFromId": 5002183
+    },
+    "original": "83ec088b442410"
+  }
+]

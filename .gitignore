@@ -18,8 +18,8 @@ __pycache__/
 *.key
 *.idb
 *.i64
-client/map-suite/src/version.h
-client/map-suite/*.asi
+client/valkyrie-asi-suite/valkyrie-core/src/version.h
+client/valkyrie-asi-suite/build/*.asi
 client/crashfix/*.asi
 
 Valkyrie Crashfix.log

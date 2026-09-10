@@ -30,8 +30,8 @@ Without `-Release`, Map and Doctor retain development diagnostics. Their release
 
 | Target | Underlying recipe | Output |
 | --- | --- | --- |
-| map | `client/map-suite/build.ps1 -OnlyTarget valkyrie-map` | `client/map-suite/build/valkyrie-map.asi` |
-| doctor | `client/map-suite/build.ps1 -OnlyTarget doctor-valkyrie` | `client/map-suite/build/doctor-valkyrie.asi` |
+| map | `client/valkyrie-asi-suite/build.ps1 -OnlyTarget valkyrie-map` | `client/valkyrie-asi-suite/build/valkyrie-map.asi` |
+| doctor | `client/valkyrie-asi-suite/build.ps1 -OnlyTarget doctor-valkyrie` | `client/valkyrie-asi-suite/build/doctor-valkyrie.asi` |
 | crashfix | `client/crashfix/source/build.ps1` | `client/crashfix/Valkyrie Crashfix.asi` |
 | repair | `client/repair-tool/source/build.ps1` | `client/repair-tool/valkyrie-repair.exe` |
 

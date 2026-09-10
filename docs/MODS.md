@@ -4,8 +4,8 @@ Use the root `build.ps1` to build these projects from one entry point. See [ASI 
 
 | Mod | Source snapshot | Build |
 | --- | --- | --- |
-| Valkyrie Map | Earlier 0.2.0 baseline before private Radar development; later public download is 0.2.1-test | client/map-suite/build.ps1 -Release -OnlyTarget valkyrie-map |
-| Doctor Valkyrie | 0.3.2 | client/map-suite/build.ps1 -Release -OnlyTarget doctor-valkyrie |
+| Valkyrie Map | Earlier 0.2.0 baseline before private Radar development; later public download is 0.2.1-test | client/valkyrie-asi-suite/build.ps1 -Release -OnlyTarget valkyrie-map |
+| Doctor Valkyrie | 0.3.2 | client/valkyrie-asi-suite/build.ps1 -Release -OnlyTarget doctor-valkyrie |
 | Valkyrie Crashfix | 2.3.0-test, GPL-3.0 | client/crashfix/source/build.ps1 |
 | Valkyrie Repair | 1.2 | client/repair-tool/source/build.ps1 |
 | Winmode Nullfix | Previously released binary embedded in Repair; standalone package contains binary and README only | Source not found in the inspected repository or public package. |

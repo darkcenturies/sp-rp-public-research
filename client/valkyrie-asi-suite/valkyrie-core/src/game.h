@@ -200,7 +200,7 @@ MapView Map();
 // Move the complete map view. Zoom and origin have to change together: changing
 // only zoom makes the map scale around GTA's fixed screen centre, while changing
 // the origin by the matching amount keeps the world point under the cursor put.
-// See client/map-suite/src/mapzoom.cpp.
+// See client/valkyrie-asi-suite/src/mapzoom.cpp.
 void SetMapView(MapView view);
 
 // The back buffer size, for keeping panels on screen.

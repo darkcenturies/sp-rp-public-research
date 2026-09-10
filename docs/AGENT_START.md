@@ -23,8 +23,8 @@ GTA SA is the base game. SA-MP is its multiplayer platform. S&SMP is a separate 
 | Task | Start here | What it contains |
 | --- | --- | --- |
 | Build an ASI | root `build.ps1`, [BUILDING.md](BUILDING.md) | Public build entry point and compiler setup |
-| Map controls | `client/map-suite/src/main_map.cpp`, `mapzoom.cpp`, `game.cpp` | Network-free pause-map hooks and controls; earlier 0.2.0 baseline |
-| Doctor diagnosis | `client/map-suite/src/main_doctor.cpp`, `doctor.cpp`, `doctorlist.cpp` | Doctor 0.3.2 entry point, evidence classification and rules |
+| Map controls | `client/valkyrie-asi-suite/src/main_map.cpp`, `mapzoom.cpp`, `game.cpp` | Network-free pause-map hooks and controls; earlier 0.2.0 baseline |
+| Doctor diagnosis | `client/valkyrie-asi-suite/src/main_doctor.cpp`, `doctor.cpp`, `doctorlist.cpp` | Doctor 0.3.2 entry point, evidence classification and rules |
 | Doctor UI/resources | `crashwindow.cpp`, `reportpaths.cpp`, `doctor-valkyrie.rc` in the same source folder | Diagnostic window, reports and embedded resources |
 | Crash guards | `client/crashfix/source/ValkyrieCrashfix.cpp`, `SafePatch.inc`, `tests/` | Crashfix 2.3.0-test and native/machine-code tests; GPL-3.0 |
 | Repair application | `client/repair-tool/source/Engine.cs`, `MainForm.cs`, `SelfTests.cs` | Repair 1.2 scanning, user-approved repairs, undo and isolated tests |

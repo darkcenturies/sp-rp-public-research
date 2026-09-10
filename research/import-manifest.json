@@ -2879,179 +2879,179 @@
       "sha256": "527f274eb65cdf01b00fba3b1dffed3d8a15f7c63651d4a2c2b4d50c281ca6fb"
     },
     {
-      "path": "client/map-suite/src/log.h",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/log.h",
       "sha256": "b0e1ffc9c13f3780fa946cc75aec48dea77992d5186d52367237cb70fc680834"
     },
     {
-      "path": "client/map-suite/src/switches.h",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/switches.h",
       "sha256": "5499b0164861215903607441b50caa804888fe0bd85614fd479473ca54f24a17"
     },
     {
-      "path": "client/map-suite/src/game.h",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/game.h",
       "sha256": "84897f3231631ad1f3baaf07b5fcbaf2100d6abcaaa84701ec9e46489672822c"
     },
     {
-      "path": "client/map-suite/src/crashwindow.cpp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/crashwindow.cpp",
       "sha256": "374279ac2ae48aa8be380b11396a98ba7ea657283d87f6fb2331af939538aff5"
     },
     {
-      "path": "client/map-suite/src/reportpaths.h",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/reportpaths.h",
       "sha256": "55787799b6e73a18e2751813f4539fbc4076094749743e665a5eb216180652fd"
     },
     {
-      "path": "client/map-suite/src/resource.h",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/resource.h",
       "sha256": "d851b604e9b103b0451213e24ccd98d8554bfc4f714ddca43053a5dc69bde119"
     },
     {
-      "path": "client/map-suite/src/crashwindow.h",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/crashwindow.h",
       "sha256": "f3e4b4e57180e651b9fcab8730b00e2a0a17d29ef8d85fe93ae411d9e8b59d2e"
     },
     {
-      "path": "client/map-suite/src/reportpaths.cpp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/reportpaths.cpp",
       "sha256": "8869161e7eedc499ca3796d84d64f5b43c3fb289ea248faa20defd55d9924ccc"
     },
     {
-      "path": "client/map-suite/src/cleowatch.cpp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/cleowatch.cpp",
       "sha256": "050628c1a49e3b6c1b60b87092dec4a879b051836eb2b8c0544a6f40334f63b4"
     },
     {
-      "path": "client/map-suite/src/cleowatch.h",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/cleowatch.h",
       "sha256": "e1b4f81f11fdf0f803990642164652865eb2bbc2fa7cd51d9d100c826ad8428e"
     },
     {
-      "path": "client/map-suite/src/doctorlist.cpp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/doctorlist.cpp",
       "sha256": "15a90bb69c0407f4b50236f50236052363a75a71318e7f2e9c8626b2fdca58bc"
     },
     {
-      "path": "client/map-suite/src/doctorlist.h",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/doctorlist.h",
       "sha256": "3603ae6fe873820331be4c4d827d146e0360534c3c05634388066b77d3d6c7a8"
     },
     {
-      "path": "client/map-suite/src/doctor.cpp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/doctor.cpp",
       "sha256": "26df56b18268e16504cbaf5b56c4a2974ac28d8c8b1cfbfc38396c284d30e519"
     },
     {
-      "path": "client/map-suite/src/crashfix_support.h",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/crashfix_support.h",
       "sha256": "565379c787fd40d18917722922eaa53b365dddb9550b513a04505b3141a79f9e"
     },
     {
-      "path": "client/map-suite/src/doctor.h",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/doctor.h",
       "sha256": "264b60f1d7d933fe529717c79f1d92064e619837646800856d5423880ff1564f"
     },
     {
-      "path": "client/map-suite/src/main_doctor.cpp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/main_doctor.cpp",
       "sha256": "4aff05e7ea69dde3a06b0aadf3176abbdd04b4a06a68495af5356ae5a3d88e80"
     },
     {
-      "path": "client/map-suite/src/log.cpp",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/log.cpp",
       "sha256": "cd7c27a4b20be536ecf008e1e1840d0e7466f7e416a65714dbcd42cfab8376ff"
     },
     {
-      "path": "client/map-suite/src/switches.cpp",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/switches.cpp",
       "sha256": "a5955293e57785a740baa2e8ef03a6807dc2a67972ff80b047ccea7b726344be"
     },
     {
-      "path": "client/map-suite/src/mapzoom.cpp",
+      "path": "client/valkyrie-asi-suite/valkyrie-map/src/mapzoom.cpp",
       "sha256": "0b190b3ba1dee08f30bf58b889c10105c55c7296a6344892efd4d8c4fa85ccbe"
     },
     {
-      "path": "client/map-suite/src/mapzoom.h",
+      "path": "client/valkyrie-asi-suite/valkyrie-map/src/mapzoom.h",
       "sha256": "352ba1a1f4e9197f756b3c0368da29935c95f860147675826ba5336a4384bd64"
     },
     {
-      "path": "client/map-suite/src/game.cpp",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/game.cpp",
       "sha256": "6dce1233461e1a57a81b8848c090883311c038a40053a2be750263af2e0a6c83"
     },
     {
-      "path": "client/map-suite/src/main_map.cpp",
+      "path": "client/valkyrie-asi-suite/valkyrie-map/src/main_map.cpp",
       "sha256": "b64b4d3168c0a226c641c82309d022334b0c997aa23a54cccd0e467b7c3e3f31"
     },
     {
-      "path": "client/map-suite/res/CrashList.es.txt",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/CrashList.es.txt",
       "sha256": "fa82c4d284b4eb607ea1e8540fec95598afbc6be689ee14ccd9352b1f9d20ddc"
     },
     {
-      "path": "client/map-suite/res/CrashList.txt",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/CrashList.txt",
       "sha256": "80b29b7fc876eda3d6c8baeeaee64a9ff8706217de7b182c5b891e43b6ff66db"
     },
     {
-      "path": "client/map-suite/res/doctor-eagle-gray.bmp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/doctor-eagle-gray.bmp",
       "sha256": "b588da2b9895640954da8fcff4ed6af6cc8a914189adc7dea4d198c446c8ba4b"
     },
     {
-      "path": "client/map-suite/res/doctor-eagle.bmp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/doctor-eagle.bmp",
       "sha256": "fc0b021e93ed88d6e8e9477046162699dafafae400d06241f4b2ea0c8bb50adf"
     },
     {
-      "path": "client/map-suite/res/doctor-header.bmp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/doctor-header.bmp",
       "sha256": "af99eea8f2aa3668c669af3cb968c02da6408c4e82c16445116bd49992d297a1"
     },
     {
-      "path": "client/map-suite/res/doctor-ssmp-gray.bmp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/doctor-ssmp-gray.bmp",
       "sha256": "c2d31fd96f73e10665fb18a6130e12fde57ebae8b3414a86b8c1396673d4c6ad"
     },
     {
-      "path": "client/map-suite/res/doctor-ssmp.bmp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/doctor-ssmp.bmp",
       "sha256": "66b4af4c0e85d3b26bfdaa741344217b1b67eb2761f4c2de23bd100dda8820de"
     },
     {
-      "path": "client/map-suite/res/doctor-unknown-header.bmp",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/doctor-unknown-header.bmp",
       "sha256": "9e1ac230704bfd3f047416962469de1c08657b903a40038eb5395431ee603e02"
     },
     {
-      "path": "client/map-suite/res/doctor-valkyrie.es.txt",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/res/doctor-valkyrie.es.txt",
       "sha256": "9a4700b84611a24d69b1df8d40071d47cda0458f6f0acd64fce12645a356a6f8"
     },
     {
-      "path": "client/map-suite/src/doctor-valkyrie.rc",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/src/doctor-valkyrie.rc",
       "sha256": "8e487b603aab9a7ed8e1a08f2540f2dbfd60d0eee3094f1fdfd0bd249982ca14"
     },
     {
-      "path": "client/map-suite/src/resource.h",
+      "path": "client/valkyrie-asi-suite/valkyrie-core/src/resource.h",
       "sha256": "d851b604e9b103b0451213e24ccd98d8554bfc4f714ddca43053a5dc69bde119"
     },
     {
-      "path": "client/map-suite/DOCTOR-VALKYRIE.md",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/DOCTOR-VALKYRIE.md",
       "sha256": "2780f0e25fa63867210b187c29a6c4a98d704fe1af282f05c0d340187b3c22cf"
     },
     {
-      "path": "client/map-suite/CRASHDETECT-COVERAGE.md",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/CRASHDETECT-COVERAGE.md",
       "sha256": "acd99573b3a09150a804137b27a605202c89c0c0dfae43e0662d48629ca8edc2"
     },
     {
-      "path": "client/map-suite/CHANGELOG-0.3.0.md",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/CHANGELOG-0.3.0.md",
       "sha256": "de1915a88733eb9f8db8e1fbeaa43257d6b9ed3ffbdc61864e805189dd39f659"
     },
     {
-      "path": "client/map-suite/CHANGELOG-0.3.1.md",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/CHANGELOG-0.3.1.md",
       "sha256": "8a3a480785d7b4b10865233ae2e2c376ee1405ca8ffabb821373961d363ceab8"
     },
     {
-      "path": "client/map-suite/RELEASE-0.3.0.md",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/RELEASE-0.3.0.md",
       "sha256": "f139acb2391d5c8662af0f5b76c433c05a81f4aa83ee824572267e30b2e33fd6"
     },
     {
-      "path": "client/map-suite/RELEASE-0.3.1.md",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/RELEASE-0.3.1.md",
       "sha256": "0bb56a4759ba74ae2131ce001de27fb83ffbe3b3bf48969a28a9be34658d8958"
     },
     {
-      "path": "client/map-suite/doctor-valkyrie.txt",
+      "path": "client/valkyrie-asi-suite/doctor-valkyrie/doctor-valkyrie.txt",
       "sha256": "5653e0d6a5b4ecbfd458af12aba5c59833143bd88574cecf552f35c47138745f"
     },
     {
-      "path": "client/map-suite/build-overview.ps1",
+      "path": "client/valkyrie-asi-suite/valkyrie-map/build-overview.ps1",
       "sha256": "4b5528db0546b22f68edcaab86456a3a36091eb956c634e8e7286df061b3a80d"
     },
     {
-      "path": "client/map-suite/build-overview-hd.ps1",
+      "path": "client/valkyrie-asi-suite/valkyrie-map/build-overview-hd.ps1",
       "sha256": "e200aff0aa57b3e512ec80b0dd448eff661ae083ae26b3a1a2a39b9128406276"
     },
     {
-      "path": "client/map-suite/build-overview-full.ps1",
+      "path": "client/valkyrie-asi-suite/valkyrie-map/build-overview-full.ps1",
       "sha256": "cf5b699d7da96a181fb8f9118297b97563e3a8233e11c29ffb96b6a41a8b7c3f"
     },
     {
-      "path": "client/map-suite/build-map-variants.ps1",
+      "path": "client/valkyrie-asi-suite/valkyrie-map/build-map-variants.ps1",
       "sha256": "5f1dad098e1b8d084c69afc914c474b12f9d80226e91c91ac1bcd81aff60e70f"
     },
     {

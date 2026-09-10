@@ -11,8 +11,8 @@ param(
 $ErrorActionPreference = 'Stop'
 $targets = if ($Target -eq 'all') { @('map', 'doctor', 'crashfix', 'repair') } else { @($Target) }
 $outputs = @{
-    map = 'client/map-suite/build/valkyrie-map.asi'
-    doctor = 'client/map-suite/build/doctor-valkyrie.asi'
+    map = 'client/valkyrie-asi-suite/build/valkyrie-map.asi'
+    doctor = 'client/valkyrie-asi-suite/build/doctor-valkyrie.asi'
     crashfix = 'client/crashfix/Valkyrie Crashfix.asi'
     repair = 'client/repair-tool/valkyrie-repair.exe'
 }
@@ -53,8 +53,8 @@ try {
     foreach ($item in $targets) {
         Write-Host "[public-build] $item"
         switch ($item) {
-            'map' { & (Join-Path $PSScriptRoot 'client/map-suite/build.ps1') -OnlyTarget valkyrie-map -Release:$Release }
-            'doctor' { & (Join-Path $PSScriptRoot 'client/map-suite/build.ps1') -OnlyTarget doctor-valkyrie -Release:$Release }
+            'map' { & (Join-Path $PSScriptRoot 'client/valkyrie-asi-suite/build.ps1') -OnlyTarget valkyrie-map -Release:$Release }
+            'doctor' { & (Join-Path $PSScriptRoot 'client/valkyrie-asi-suite/build.ps1') -OnlyTarget doctor-valkyrie -Release:$Release }
             'crashfix' { & (Join-Path $PSScriptRoot 'client/crashfix/source/build.ps1') }
             'repair' { & (Join-Path $PSScriptRoot 'client/repair-tool/source/build.ps1') }
         }

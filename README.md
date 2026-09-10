@@ -23,7 +23,7 @@ Original SP-RP code is offered under [BSD-3-Clause](LICENSE), which permits use 
 
 | Project | Source |
 | --- | --- |
-| Valkyrie Map and Doctor Valkyrie | [client/map-suite](client/map-suite) |
+| Valkyrie Map and Doctor Valkyrie | [client/valkyrie-asi-suite](client/valkyrie-asi-suite) |
 | Valkyrie Crashfix 2.3.0-test | [client/crashfix](client/crashfix) |
 | Valkyrie Repair 1.2 | [client/repair-tool](client/repair-tool) |
 | Binary-analysis and pedestrian-path research tools | [deploy](deploy) |

@@ -35,3 +35,9 @@ The public research collection includes full generated decompilation and disasse
 This is an unofficial community project, not affiliated with Rockstar Games, Take-Two, SA-MP, S&SMP or Project Eagle. Obtain game prerequisites separately.
 
 Unreleased Valkyrie Radar work is private and is not included in this repository.
+
+## Repository layout
+
+Read this before moving files:
+
+- [Public research repository structure](PUBLIC-RESEARCH-ORGANIZATION.md)

@@ -21,3 +21,6 @@ __pycache__/
 client/sprp-blips/src/version.h
 client/sprp-blips/*.asi
 client/valkyrie-crashfix/*.asi
+
+Valkyrie Crashfix.log
+actor-metadata-fixture.bin

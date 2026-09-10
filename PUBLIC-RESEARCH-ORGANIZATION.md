@@ -1,9 +1,38 @@
-# GitHub organization notes (public-research)
+# SP-RP public-research repository structure
 
-This repository is the public research companion to the SP-RP project.
+This repository is the public companion repository to the SP-RP server project.
 
-- It hosts public reverse-engineering artifacts, tool scripts, and docs.
-- It intentionally excludes private server credentials/assets/DBs.
-- Runtime client/source compatibility for server builds remains in the `sp-rp` server repository.
+## Canonical layers (GitHub view)
 
-`client/sprp-blips`, `client/valkyrie-crashfix`, and `client/valkyrie-repair` here refer to publicly visible ASI/research source snapshots.
+- `client/`
+  - `sprp-blips`, `valkyrie-crashfix`, `valkyrie-repair` source snapshots for
+    ASI tools
+- `deploy/`
+  - decompilation pipelines, binary analysis tools, and reverse-engineering
+    utilities
+- `docs/`
+  - public-facing documentation, build notes, and integration guides
+- `research/`
+  - research findings, evidence standards, and index assets
+- `third_party/`
+  - embedded plugin-sdk and related external code required for ASI work
+- repository root files
+  - licensing, contributing guidance, and build entry scripts
+
+## Scope boundaries
+
+This repo intentionally stays separate from private runtime deployment secrets,
+live server databases, and private build history. Those parts remain in the
+private SP-RP server repository.
+
+## Why names stay
+
+Public documentation and tooling reference these names directly. Keeping
+`sprp-blips`, `valkyrie-crashfix`, and `valkyrie-repair` unchanged keeps
+release notes, tests, and historical archives aligned.
+
+## Non-breaking organization plan
+
+- Keep canonical path names above for day-to-day work.
+- Use local workspace grouping outside this repo only if you want cleaner local
+  navigation.

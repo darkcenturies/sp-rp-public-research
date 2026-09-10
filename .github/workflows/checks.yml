@@ -12,15 +12,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build public ASIs
+      - name: Build public mods and Repair self-tests
         shell: powershell
-        run: ./client/sprp-blips/build.ps1 -Release
-      - name: Build Crashfix
-        shell: powershell
-        run: ./client/valkyrie-crashfix/source/build.ps1
+        run: ./build.ps1 -Release
       - name: Crashfix native tests
         shell: powershell
         run: ./client/valkyrie-crashfix/source/tests/build-tests.ps1
-      - name: Repair build and isolated self-tests
-        shell: powershell
-        run: ./client/valkyrie-repair/source/build.ps1

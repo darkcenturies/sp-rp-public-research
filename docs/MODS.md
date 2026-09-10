@@ -1,5 +1,7 @@
 # Public mod source catalog
 
+Use the root `build.ps1` to build these projects from one entry point. See [ASI builder and compiler setup](BUILDING.md); AI agents should start with [AGENT_START.md](AGENT_START.md).
+
 | Mod | Source snapshot | Build |
 | --- | --- | --- |
 | Valkyrie Map | Earlier 0.2.0 baseline before private Radar development; later public download is 0.2.1-test | client/sprp-blips/build.ps1 -Release -OnlyTarget valkyrie-map |

@@ -1,5 +1,7 @@
 # SP-RP Public Research
 
+The [GTA plugin-sdk guide](docs/PLUGIN_SDK.md) explains our pinned DK22Pac/plugin-sdk dependency, initialization and source layout. Clone with `--recurse-submodules` to include its source.
+
 A community workshop for GTA: San Andreas, SA-MP and S&SMP interoperability research, reusable tools, and Valkyrie's released mods.
 
 Everyone can propose improvements through a pull request. Maintainers review changes before merging. This repository has no connection or deployment credentials to the live SP-RP server.
@@ -8,6 +10,8 @@ Original SP-RP code is offered under [BSD-3-Clause](LICENSE), which permits use 
 
 ## Start here
 
+- **AI agents: read [AGENTS.md](AGENTS.md) and [the agent start guide](docs/AGENT_START.md) first.**
+- [ASI builder and compiler setup](docs/BUILDING.md) — `./build.ps1 -CheckEnvironment`, then `./build.ps1 -Release`.
 - [Mod source and build guide](docs/MODS.md)
 - [Full decompilation archive and coverage](docs/reverse-engineering/README.md)
 - [Research index and evidence standards](research/README.md)

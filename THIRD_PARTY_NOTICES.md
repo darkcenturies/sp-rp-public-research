@@ -1,5 +1,7 @@
 # Credits and licensing
 
+DK22Pac/plugin-sdk is included unchanged at `third_party/plugin-sdk`, pinned to `15f15b60bbf74c106e1b496ff92c98764abf4605`. Its root zlib license credits Dmitry K., fastman92 and LINK/2012. Preserve its license and bundled dependency notices. SP-RP's BSD license does not replace upstream terms. See [the SDK guide](docs/PLUGIN_SDK.md).
+
 SP-RP is maintained by darkcenturies / valkyrie. The original SP-RP BSD-3-Clause notice credits Dignity and is preserved in LICENSE. Original project contributions follow those terms unless their files or directories specify otherwise.
 
 Valkyrie Crashfix is GPL-3.0, with its license at client/valkyrie-crashfix/LICENSE and original notices retained in source/third-party. Credits include konradzimorski, Whitetiger, MTA:SA, Deji, 0x688, Ryosuke839 and bartekdvd. The root BSD notice does not override these terms.

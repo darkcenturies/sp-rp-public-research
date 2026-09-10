@@ -7,7 +7,21 @@ import sys
 root = Path(__file__).resolve().parent.parent
 paths = subprocess.check_output(['git', 'ls-files', '-z'], cwd=root).decode().split('\0')
 errors = []
+gitlinks = {}
+for entry in subprocess.check_output(['git', 'ls-files', '--stage', '-z'], cwd=root).decode().split('\0'):
+    if entry:
+        attributes, name = entry.split('\t', 1)
+        mode, sha, stage = attributes.split()
+        if mode == '160000':
+            gitlinks[name] = sha
+if gitlinks != {'third_party/plugin-sdk': '15f15b60bbf74c106e1b496ff92c98764abf4605'}:
+    errors.append('Unexpected or missing pinned plugin-sdk submodule')
+sdk_url = subprocess.check_output(['git', 'config', '-f', '.gitmodules', '--get', 'submodule.third_party/plugin-sdk.url'], cwd=root).decode().strip()
+if sdk_url != 'https://github.com/dk22pac/plugin-sdk.git':
+    errors.append('Unexpected plugin-sdk upstream URL')
 for name in filter(None, paths):
+    if name in gitlinks:
+        continue
     p = root / name
     if name.startswith(('component/', 'deploy/radar-release/')) or p.name in {'radar3d.cpp', 'radar3d.h', 'main_radar3d.cpp', 'radarbox.h', 'radar_logo.h', 'router.cpp', 'router.h', 'vehgraph.hpp', '3D_RADAR_DEVELOPMENT.md', 'RADAR_REVIEW_2026-09-06.md', 'RADAR3D-STATUS.md', 'RADAR3D-OCCLUSION.md'} or name.startswith('deploy/world3d-'):
         errors.append(name + ': unreleased Radar work')

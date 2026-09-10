@@ -1,6 +1,12 @@
 # SP-RP Public Research
 
-Read README.md, CONTRIBUTING.md and research/README.md first. This is a public research/mod repository, not the SP-RP server.
+GTA SDK: initialize `third_party/plugin-sdk` with `git submodule update --init --recursive`. Read docs/PLUGIN_SDK.md for its source map, pinned version and upstream setup. Existing released mod recipes do not require it.
+
+Read docs/AGENT_START.md first: it contains the project map, build commands, archive-reading workflow, known gaps and scope. Then read CONTRIBUTING.md and the relevant component's README. This is a public research/mod repository, not the SP-RP server.
+
+Build entry point: `./build.ps1 -CheckEnvironment`, then `./build.ps1 -Target doctor -Release` (or map, crashfix, repair, all). Setup and outputs are in docs/BUILDING.md. These use the installed MSVC x86 toolchain; the repository includes build recipes, not Microsoft's compiler. No server or game install is needed to compile.
+
+Research entry point: docs/reverse-engineering/generated/index.json → target metadata.json → functions/symbols/named CSV indexes → bounded excerpts of decompiled.c/disassembly.txt. Do not read the whole archive into context. `python tools/check_public.py` includes the archive-integrity check. Keep observed facts separate from decompiler inference and historical notes.
 
 Valkyrie Radar is unreleased and private. Do not export its implementation, renderer, routing component, tile pipeline or project-specific research notes. Shared Map code must not reintroduce private Radar additions; the public Map currently uses the earlier 0.2.0 baseline.
 

@@ -13,8 +13,8 @@ $targets = if ($Target -eq 'all') { @('map', 'doctor', 'crashfix', 'repair') } e
 $outputs = @{
     map = 'client/valkyrie-asi-suite/build/valkyrie-map.asi'
     doctor = 'client/valkyrie-asi-suite/build/doctor-valkyrie.asi'
-    crashfix = 'client/crashfix/Valkyrie Crashfix.asi'
-    repair = 'client/repair-tool/valkyrie-repair.exe'
+    crashfix = 'client/valkyrie-asi-suite/valkyrie-crashfix/Valkyrie Crashfix.asi'
+    repair = 'client/valkyrie-asi-suite/valkyrie-repair/valkyrie-repair.exe'
 }
 if ($List) {
     $targets | ForEach-Object { [pscustomobject]@{Target = $_; Output = $outputs[$_]} }
@@ -55,8 +55,8 @@ try {
         switch ($item) {
             'map' { & (Join-Path $PSScriptRoot 'client/valkyrie-asi-suite/build.ps1') -OnlyTarget valkyrie-map -Release:$Release }
             'doctor' { & (Join-Path $PSScriptRoot 'client/valkyrie-asi-suite/build.ps1') -OnlyTarget doctor-valkyrie -Release:$Release }
-            'crashfix' { & (Join-Path $PSScriptRoot 'client/crashfix/source/build.ps1') }
-            'repair' { & (Join-Path $PSScriptRoot 'client/repair-tool/source/build.ps1') }
+            'crashfix' { & (Join-Path $PSScriptRoot 'client/valkyrie-asi-suite/valkyrie-crashfix/src/build.ps1') }
+            'repair' { & (Join-Path $PSScriptRoot 'client/valkyrie-asi-suite/valkyrie-repair/src/build.ps1') }
         }
         $artifact = Join-Path $PSScriptRoot $outputs[$item]
         if (-not (Test-Path -LiteralPath $artifact -PathType Leaf)) { throw "Missing build output: $artifact" }

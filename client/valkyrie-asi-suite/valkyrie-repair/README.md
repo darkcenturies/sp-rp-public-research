@@ -14,7 +14,7 @@ Crashfix guidance links to https://sp-rp.com/#valkyrie-crashfix. Select a findin
 to open its clickable download link. Disabling RadioEx is an optional diagnostic
 action, not a prerequisite for installing Crashfix.
 
-Build: run source/build.ps1 with .NET Framework 4.x installed. It produces the
+Build: run src/build.ps1 with .NET Framework 4.x installed. It produces the
 shipping GUI and runs isolated self-tests in a separate executable. The test
 executable uses generated temporary fixtures; its process-check bypass is never
 compiled into the shipping application. The GUI retains the game-running check.

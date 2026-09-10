@@ -17,4 +17,4 @@ jobs:
         run: ./build.ps1 -Release
       - name: Crashfix native tests
         shell: powershell
-        run: ./client/crashfix/source/tests/build-tests.ps1
+        run: ./client/valkyrie-asi-suite/valkyrie-crashfix/src/tests/build-tests.ps1

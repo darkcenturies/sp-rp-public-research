@@ -6,8 +6,8 @@ Use the root `build.ps1` to build these projects from one entry point. See [ASI 
 | --- | --- | --- |
 | Valkyrie Map | Earlier 0.2.0 baseline before private Radar development; later public download is 0.2.1-test | client/valkyrie-asi-suite/build.ps1 -Release -OnlyTarget valkyrie-map |
 | Doctor Valkyrie | 0.3.2 | client/valkyrie-asi-suite/build.ps1 -Release -OnlyTarget doctor-valkyrie |
-| Valkyrie Crashfix | 2.3.0-test, GPL-3.0 | client/crashfix/source/build.ps1 |
-| Valkyrie Repair | 1.2 | client/repair-tool/source/build.ps1 |
+| Valkyrie Crashfix | 2.3.0-test, GPL-3.0 | client/valkyrie-asi-suite/valkyrie-crashfix/src/build.ps1 |
+| Valkyrie Repair | 1.2 | client/valkyrie-asi-suite/valkyrie-repair/src/build.ps1 |
 | Winmode Nullfix | Previously released binary embedded in Repair; standalone package contains binary and README only | Source not found in the inspected repository or public package. |
 
 Run the PowerShell scripts on Windows. The ASIs require Visual Studio C++ Build Tools with the Windows SDK (x86 target). Repair uses .NET Framework 4.x; its build runs isolated self-tests without launching the GUI. Crashfix's native tests are in source/tests/build-tests.ps1; machine-code tests have their own requirements.txt.

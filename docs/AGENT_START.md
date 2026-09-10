@@ -26,8 +26,8 @@ GTA SA is the base game. SA-MP is its multiplayer platform. S&SMP is a separate 
 | Map controls | `client/valkyrie-asi-suite/src/main_map.cpp`, `mapzoom.cpp`, `game.cpp` | Network-free pause-map hooks and controls; earlier 0.2.0 baseline |
 | Doctor diagnosis | `client/valkyrie-asi-suite/src/main_doctor.cpp`, `doctor.cpp`, `doctorlist.cpp` | Doctor 0.3.2 entry point, evidence classification and rules |
 | Doctor UI/resources | `crashwindow.cpp`, `reportpaths.cpp`, `doctor-valkyrie.rc` in the same source folder | Diagnostic window, reports and embedded resources |
-| Crash guards | `client/crashfix/source/ValkyrieCrashfix.cpp`, `SafePatch.inc`, `tests/` | Crashfix 2.3.0-test and native/machine-code tests; GPL-3.0 |
-| Repair application | `client/repair-tool/source/Engine.cs`, `MainForm.cs`, `SelfTests.cs` | Repair 1.2 scanning, user-approved repairs, undo and isolated tests |
+| Crash guards | `client/valkyrie-asi-suite/valkyrie-crashfix/src/ValkyrieCrashfix.cpp`, `SafePatch.inc`, `tests/` | Crashfix 2.3.0-test and native/machine-code tests; GPL-3.0 |
+| Repair application | `client/valkyrie-asi-suite/valkyrie-repair/src/Engine.cs`, `MainForm.cs`, `SelfTests.cs` | Repair 1.2 scanning, user-approved repairs, undo and isolated tests |
 | Protocol facts | [S&SMP protocol](../research/ssmp-protocol.md), [pseudocode](reverse-engineering/ssmp-server-1.3.1-patch1.pseudo.cpp) | Recorded E7/D8/E9 and join layouts; not a complete server implementation |
 | Game/client internals | [archive inventory](reverse-engineering/README.md) | Four complete generated target exports and coverage |
 | Population research | [ped population](reverse-engineering/PECORE-PED-POPULATION.md) | Recorded observations, methods and unresolved meanings |

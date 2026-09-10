@@ -20,7 +20,7 @@ __pycache__/
 *.i64
 client/valkyrie-asi-suite/valkyrie-core/src/version.h
 client/valkyrie-asi-suite/build/*.asi
-client/crashfix/*.asi
+client/valkyrie-asi-suite/valkyrie-crashfix/*.asi
 
 Valkyrie Crashfix.log
 actor-metadata-fixture.bin

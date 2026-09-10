@@ -91,7 +91,7 @@ An x86 build emits MSVC C4733 for the inline restoration of FS:[0]. The code is 
 - `source/tests/audit.json`: exact supported bytes, recovery signatures, guard contracts and reviewed assembly.
 - `source/tests/legacy-sites.json`: all original 29 hook entries.
 - `source/tests/generate_guards.py`: reproducible guard/signature generation, restricted to the reviewed executable hash.
-- `source/build.ps1`: MSVC x86 release build; only the rewritten source is compiled. The old imported source remains included for attribution and audit.
+- `src/build.ps1`: MSVC x86 release build; only the rewritten source is compiled. The old imported source remains included for attribution and audit.
 - `source/tests/build-tests.ps1`: build/run native tests from a scratch directory.
 - `source/tests/test_guards.py`: run compiled-guard emulation after building.
 
